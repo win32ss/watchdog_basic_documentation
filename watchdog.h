@@ -104,6 +104,7 @@ typedef struct _WD_LOGENTRY{
   PKTHREAD Thread;
   ULONG64 ReturnAddress;
   ULONG64 Parameter[5]; // seems to hold a variety of error codes; index 1 seemingly for NTSTATUS, index 0 for something more application-specific.
+                        // In the case of the logging of a critical error; Parameter represents the bug check code and parameters in respective order.
 } WD_LOGENTRY, *PWD_LOGENTRY;
 
 typedef struct _WD_WER_CONTEXT{
